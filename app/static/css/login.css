@@ -1,0 +1,97 @@
+/* 1. Definição do Sistema de Cores e Variáveis */
+:root {
+    /* Cores de Identidade */
+    --cor-primaria: #273ea7;
+    --cor-primaria-hover: #0e2491;
+    --cor-secundaria: #764ba2;
+    --cor-secundaria-hover: #633d8a;
+    
+    /* Cores de Suporte */
+    --cor-fundo-gradiente: linear-gradient(135deg, var(--cor-primaria) 0%, var(--cor-secundaria) 100%);
+    --branco: #ffffff;
+    --texto-mutado: #6c757d;
+    
+    /* Estilização de Componentes */
+    --raio-borda: 12px;
+    --sombra-card: 0 15px 35px rgba(0, 0, 0, 0.2);
+    --transicao: all 0.3s ease;
+}
+
+/* 2. Estilo Global */
+body {
+    background: var(--cor-fundo-gradiente);
+    font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+}
+
+/* 3. O Card de Login */
+.login-card {
+    border: none !important; /* Sobrescreve borda padrão do Bootstrap */
+    border-radius: var(--raio-borda);
+    box-shadow: var(--sombra-card);
+    background-color: var(--branco);
+    transition: var(--transicao);
+}
+
+/* 4. Inputs e Formulários */
+.form-label {
+    font-weight: 500;
+    color: var(--cor-secundaria);
+}
+
+.form-control {
+    padding: 12px;
+    border-radius: 8px;
+    border: 1px solid #dee2e6;
+}
+
+.form-control:focus {
+    border-color: var(--cor-primaria);
+    box-shadow: 0 0 0 0.25rem rgba(102, 126, 234, 0.25);
+}
+
+/* 5. Botão Primário Customizado */
+.btn-login {
+    background-color: var(--cor-primaria);
+    border: none;
+    color: var(--branco);
+    padding: 12px;
+    font-weight: 600;
+    border-radius: 8px;
+    transition: var(--transicao);
+}
+
+.btn-login:hover {
+    background-color: var(--cor-primaria-hover);
+    transform: translateY(-1px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+.btn-login:active {
+    transform: translateY(0);
+}
+
+/* 6. Links e Textos (Usando a cor Secundária) */
+a {
+    color: var(--cor-secundaria);
+    font-weight: 500;
+    transition: var(--transicao);
+    margin-left: 5px;
+}
+
+a:hover {
+    color: var(--cor-primaria);
+    text-decoration: underline !important;
+}
+
+.text-muted {
+    color: var(--texto-mutado) !important;
+}
+
+/* 7. Checkbox Customizado (Opcional) */
+.form-check-input:checked {
+    background-color: var(--cor-primaria);
+    border-color: var(--cor-primaria);
+}
